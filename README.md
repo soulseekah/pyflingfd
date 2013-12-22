@@ -9,6 +9,7 @@ import os
 
 fd = flingfd.simple_recv( '/tmp/uniquefile' )
 os.write( fd, 'fling!' )
+os.fsync( fd )
 ```
 
 ```python
