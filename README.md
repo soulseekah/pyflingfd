@@ -19,4 +19,3 @@ flingfd.simple_send( '/tmp/uniquefile', sys.stdout )
 ```
 
 Installing is super easy: `pip install -U .` or `python setup.py install` should work out of the box.
-```
