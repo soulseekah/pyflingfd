@@ -1,0 +1,3 @@
+[submodule "libflingfd"]
+	path = libflingfd
+	url = https://github.com/sharvil/flingfd.git
