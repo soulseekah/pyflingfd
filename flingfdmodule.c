@@ -21,7 +21,7 @@ static PyObject * pyflingfd_simple_recv( PyObject *self, PyObject *args ) {
 	if ( !PyArg_ParseTuple( args, "s", &path ) )
 		Py_RETURN_FALSE;
 	
-	if ( ( fd = flingfd_simple_recv( path ) ) > -1 )
+	if ( ( fd = flingfd_simple_recv( path ) ) != -1 )
 		return Py_BuildValue( "i", fd );
 	
 	Py_RETURN_FALSE;
