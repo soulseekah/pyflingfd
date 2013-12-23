@@ -1,6 +1,6 @@
 from setuptools import setup, Extension
 
-pyflingfd = Extension( 'flingfd', sources=[ 'flingfdmodule.c', 'libflingfd/src/flingfd.c' ], extra_compile_args= [ '-std=c99' ] )
+pyflingfd = Extension( 'flingfd', sources=[ 'flingfdmodule.c', 'libflingfd/src/flingfd.c' ], extra_compile_args= [ '-std=c99', '-D_GNU_SOURCE' ] )
 
 setup(
 	name = 'flingfd',
