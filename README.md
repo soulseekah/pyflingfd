@@ -3,6 +3,8 @@ pyflingfd
 
 A simple Python binding for https://github.com/sharvil/flingfd - a small, standalone C library to pass file descriptors across processes on Linux.
 
+## Usage
+
 ```python
 import flingfd
 import os
@@ -19,4 +21,9 @@ import sys
 flingfd.simple_send( '/tmp/uniquefile', sys.stdout )
 ```
 
-Installing is super easy: `pip install -U .` or `python setup.py install` should work out of the box.
+## Installation
+
+Installing is super easy:
+- clone the repository
+- issue `git submodule init && git submodule update` inside of it to get `libflingfd` sources
+- then `pip install -U .` or `python setup.py install` should work out of the box
