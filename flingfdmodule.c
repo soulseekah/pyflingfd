@@ -3,10 +3,21 @@
 
 static PyObject * pyflingfd_simple_send( PyObject *self, PyObject *args ) {
 	const char *path;
+	PyObject *fp;
 	int fd;
 
-	if ( !PyArg_ParseTuple( args, "si", &path, &fd ) )
+	if ( !PyArg_ParseTuple( args, "sO", &path, &fp ) )
 		Py_RETURN_FALSE;
+
+	#if PY_MAJOR_VERSION >= 3
+		fd = PyObject_AsFileDescriptor( fp );
+		if ( fd == -1 )
+			Py_RETURN_FALSE;
+	#else
+		if ( !PyFile_Check( fp ) )
+			Py_RETURN_FALSE;
+		fd = fileno( PyFile_AsFile( fp ) );
+	#endif
 
 	if ( flingfd_simple_send( path, fd ) )
 		Py_RETURN_TRUE;
