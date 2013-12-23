@@ -1,7 +1,7 @@
 pyflingfd
 =========
 
-A simple Python binding for https://github.com/sharvil/flingfd
+A simple Python binding for https://github.com/sharvil/flingfd - a small, standalone C library to pass file descriptors across processes on Linux.
 
 ```python
 import flingfd
